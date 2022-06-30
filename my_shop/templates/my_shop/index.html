@@ -1,0 +1,12 @@
+{% extends 'layout/basic.html' %}
+
+{% block content %}
+{% for i in items %}
+<div>
+    <h2>{{ i.name }}</h2>
+    <p>{{ i.content }}</p>
+    <p><a href="{% url 'by_rubric' i.rubric.pk %}">{{ i.rubric.name }}</a></p>
+    <p>{{ i.published|date:'d.m.Y H:i:s' }}</p>
+</div>
+{% endfor %}
+{% endblock %}
